@@ -55,3 +55,9 @@ object Service "load" {
     vars.PowerShell_Command = "& 'C:\\Program Files\\ICINGA2\\sbin\\check_load.ps1'"
 }
 ```
+
+*Note:*
+
+The PowerShell Command is the direct path to your Icinga 2 Plugin Directory or whereever you installed these plugins to.
+
+Of course you can create commands for each single PowerShell plugin with direct arguments to access the speficic plugin. This example is a generic proposal, allowing to integrate every single PowerShell plugin without much trouble.
