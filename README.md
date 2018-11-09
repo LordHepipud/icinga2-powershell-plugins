@@ -28,9 +28,12 @@ object CheckCommand "PowerShell" {
             required = false
             value = "$PowerShell_Command$"
         }
-        "; exit" = {
+        "empty" = {
+            description = "errorhandling"
             order = 99
-            value = "$$LASTEXITCODE"
+            repeat_key = false
+            skip_key = true
+            value = ";trap{'[UNKNOWN] Error:' + $$_; exit 3};exit $$LASTEXITCODE"
         }
     }
 }
